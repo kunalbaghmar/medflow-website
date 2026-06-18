@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medflow Innovations — Advancing Healthcare Supply Chains Across India</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0A1628;
+    --navy-mid: #112240;
+    --blue: #1565C0;
+    --blue-mid: #1976D2;
+    --blue-light: #2196F3;
+    --blue-pale: #E3F0FF;
+    --white: #FFFFFF;
+    --grey-50: #F8F9FB;
+    --grey-100: #EEF0F4;
+    --grey-200: #D8DCE4;
+    --grey-400: #9BA4B4;
+    --grey-600: #5A6478;
+    --grey-800: #2D3447;
+    --accent: #00B4D8;
+    --accent-light: #E0F7FC;
+    --success: #1B8A5A;
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'DM Serif Display', serif;
+    --max-w: 1200px;
+    --section-pad: 96px 24px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--grey-800);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ── UTILITIES ──────────────────────────────────────────── */
+  .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 14px;
+  }
+  .eyebrow--light { color: var(--accent); }
+  h1,h2,h3,h4 { line-height: 1.18; }
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(32px, 4vw, 48px);
+    color: var(--navy);
+    margin-bottom: 18px;
+  }
+  .section-title--light { color: var(--white); }
+  .section-sub {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--grey-600);
+    max-width: 580px;
+  }
+  .section-sub--light { color: rgba(255,255,255,0.72); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px;
+    font-family: var(--font-sans);
+    font-size: 14px; font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1.5px solid transparent;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--blue);
+    color: var(--white);
+    border-color: var(--blue);
+  }
+  .btn-primary:hover { background: #0D47A1; border-color: #0D47A1; transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border-color: rgba(255,255,255,0.5);
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.9); transform: translateY(-1px); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--blue);
+    border-color: var(--blue);
+  }
+  .btn-ghost:hover { background: var(--blue); color: var(--white); }
+  .btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+  /* ── NAV ─────────────────────────────────────────────────── */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,22,40,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 0 24px;
+  }
+  .nav__inner {
+    max-width: var(--max-w); margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+  .nav__logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+  .nav__logo-mark {
+    width: 36px; height: 36px;
+    background: var(--blue-mid);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .nav__logo-mark svg { width: 20px; height: 20px; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .nav__brand {
+    font-size: 16px; font-weight: 700; color: var(--white);
+    letter-spacing: -0.01em;
+  }
+  .nav__brand span { color: var(--accent); }
+  .nav__links {
+    display: flex; gap: 32px; list-style: none;
+  }
+  .nav__links a {
+    font-size: 13.5px; font-weight: 500; color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav__links a:hover { color: var(--white); }
+  .nav__cta {
+    display: flex; gap: 12px;
+  }
+  .btn-nav {
+    padding: 9px 20px;
+    font-size: 13px; font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-nav--ghost { color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.2); }
+  .btn-nav--ghost:hover { color: var(--white); border-color: rgba(255,255,255,0.5); }
+  .btn-nav--solid { background: var(--blue); color: var(--white); }
+  .btn-nav--solid:hover { background: #0D47A1; }
+  .nav__hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+  .nav__hamburger span { display: block; width: 22px; height: 2px; background: white; margin: 5px 0; border-radius: 2px; transition: all 0.3s; }
+
+  /* ── HERO ─────────────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; align-items: center;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero__bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 900px 700px at 70% 50%, rgba(21,101,192,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 500px 400px at 20% 80%, rgba(0,180,216,0.08) 0%, transparent 60%);
+  }
+  .hero__grid-lines {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero__inner {
+    max-width: var(--max-w); margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    position: relative; z-index: 1;
+  }
+  .hero__badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 14px 6px 8px;
+    border: 1px solid rgba(0,180,216,0.3);
+    border-radius: 100px;
+    background: rgba(0,180,216,0.08);
+    margin-bottom: 28px;
+  }
+  .hero__badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%,100% { box-shadow: 0 0 6px var(--accent); }
+    50% { box-shadow: 0 0 14px var(--accent); }
+  }
+  .hero__badge-text { font-size: 12px; font-weight: 500; color: var(--accent); letter-spacing: 0.04em; }
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(38px, 5vw, 60px);
+    color: var(--white);
+    line-height: 1.08;
+    margin-bottom: 22px;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero__sub {
+    font-size: 17px; line-height: 1.75;
+    color: rgba(255,255,255,0.62);
+    margin-bottom: 40px;
+    max-width: 480px;
+  }
+  .hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+  .hero__stats { display: flex; gap: 40px; }
+  .hero__stat-num {
+    font-family: var(--font-serif);
+    font-size: 36px; color: var(--white); line-height: 1;
+  }
+  .hero__stat-num span { color: var(--accent); }
+  .hero__stat-label { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .hero__visual {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero__visual-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 32px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+  }
+  .hero__visual-img {
+    width: 100%; aspect-ratio: 4/3;
+    border-radius: 12px;
+    object-fit: cover;
+    background: linear-gradient(135deg, var(--navy-mid) 0%, #183060 100%);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .hero__device-svg { width: 100%; height: 100%; }
+  .hero__pills {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px;
+  }
+  .hero__pill {
+    padding: 6px 14px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 100px;
+    font-size: 12px; font-weight: 500;
+    color: rgba(255,255,255,0.6);
+  }
+  .hero__floating-badge {
+    position: absolute; top: -16px; right: -16px;
+    background: var(--accent);
+    color: var(--navy);
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    box-shadow: 0 8px 24px rgba(0,180,216,0.3);
+  }
+
+  /* ── TRUST BAR ────────────────────────────────────────────── */
+  .trust-bar {
+    background: var(--navy-mid);
+    border-top: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 20px 24px;
+  }
+  .trust-bar__inner {
+    max-width: var(--max-w); margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .trust-bar__item {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .trust-bar__icon {
+    width: 38px; height: 38px;
+    background: rgba(21,101,192,0.2);
+    border: 1px solid rgba(21,101,192,0.3);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .trust-bar__icon svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .trust-bar__label { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.85); }
+  .trust-bar__sub { font-size: 11px; color: rgba(255,255,255,0.4); }
+  .trust-bar__div { width: 1px; height: 36px; background: rgba(255,255,255,0.08); }
+
+  /* ── ABOUT ────────────────────────────────────────────────── */
+  .about { padding: var(--section-pad); background: var(--white); }
+  .about__inner {
+    max-width: var(--max-w); margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .about__visual {
+    position: relative;
+  }
+  .about__visual-main {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 40px;
+    aspect-ratio: 4/3;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
+  }
+  .about__visual-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--navy-mid) 0%, #0D2F5E 60%, var(--navy) 100%);
+  }
+  .about__visual-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .about__visual-content { position: relative; z-index: 1; }
+  .about__visual-title { font-family: var(--font-serif); font-size: 28px; color: var(--white); margin-bottom: 8px; }
+  .about__visual-sub { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .about__visual-badge {
+    position: absolute; top: 24px; right: 24px; z-index: 1;
+    background: var(--blue); color: white;
+    padding: 8px 16px; border-radius: 8px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .about__floating {
+    position: absolute; bottom: -24px; left: -24px;
+    background: var(--white);
+    border: 1px solid var(--grey-100);
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+  .about__floating-num { font-family: var(--font-serif); font-size: 28px; color: var(--navy); }
+  .about__floating-num span { color: var(--blue-light); }
+  .about__floating-label { font-size: 12px; color: var(--grey-400); margin-top: 2px; }
+  .about__content {}
+  .about__body { font-size: 16px; line-height: 1.8; color: var(--grey-600); margin-bottom: 20px; }
+  .about__pillars {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px;
+  }
+  .about__pillar {
+    padding: 20px;
+    background: var(--grey-50);
+    border: 1px solid var(--grey-100);
+    border-radius: 10px;
+    border-left: 3px solid var(--blue);
+  }
+  .about__pillar-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .about__pillar-body { font-size: 13px; color: var(--grey-600); line-height: 1.6; }
+
+  /* ── VERTICALS ─────────────────────────────────────────────── */
+  .verticals {
+    padding: var(--section-pad);
+    background: var(--grey-50);
+  }
+  .verticals__head { text-align: center; max-width: 580px; margin: 0 auto 56px; }
+  .verticals__grid {
+    max-width: var(--max-w); margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .vertical-card {
+    background: var(--white);
+    border: 1px solid var(--grey-100);
+    border-radius: 16px;
+    padding: 36px 32px;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .vertical-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--blue);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .vertical-card:hover { border-color: var(--grey-200); box-shadow: 0 12px 40px rgba(0,0,0,0.06); transform: translateY(-4px); }
+  .vertical-card:hover::before { transform: scaleX(1); }
+  .vertical-card__num {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+    color: var(--grey-200); text-transform: uppercase; margin-bottom: 20px;
+  }
+  .vertical-card__icon {
+    width: 52px; height: 52px;
+    background: var(--blue-pale);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+  }
+  .vertical-card__icon svg { width: 26px; height: 26px; stroke: var(--blue); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .vertical-card__title { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.2; }
+  .vertical-card__body { font-size: 14px; line-height: 1.7; color: var(--grey-600); margin-bottom: 20px; }
+  .vertical-card__link { font-size: 13px; font-weight: 600; color: var(--blue); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+  .vertical-card__link:hover { gap: 10px; }
+  .vertical-card:last-child { grid-column: span 1; }
+
+  /* ── WHY CHOOSE ────────────────────────────────────────────── */
+  .why {
+    padding: var(--section-pad);
+    background: var(--navy);
+    position: relative; overflow: hidden;
+  }
+  .why__bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 800px 600px at 80% 40%, rgba(21,101,192,0.2) 0%, transparent 70%);
+  }
+  .why__inner { max-width: var(--max-w); margin: 0 auto; position: relative; z-index: 1; }
+  .why__header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 52px; flex-wrap: wrap; gap: 20px; }
+  .why__grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .why-item {
+    background: rgba(255,255,255,0.02);
+    padding: 36px 32px;
+    transition: background 0.2s;
+  }
+  .why-item:hover { background: rgba(255,255,255,0.05); }
+  .why-item__num { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.2); letter-spacing: 0.1em; margin-bottom: 20px; }
+  .why-item__icon { width: 44px; height: 44px; background: rgba(21,101,192,0.25); border: 1px solid rgba(21,101,192,0.4); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+  .why-item__icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .why-item__title { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+  .why-item__body { font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,0.5); }
+
+  /* ── PRODUCT CATEGORIES ─────────────────────────────────────── */
+  .products {
+    padding: var(--section-pad);
+    background: var(--white);
+  }
+  .products__head { text-align: center; max-width: 560px; margin: 0 auto 56px; }
+  .products__grid {
+    max-width: var(--max-w); margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  }
+  .product-card {
+    border: 1px solid var(--grey-100);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.25s;
+    cursor: pointer;
+  }
+  .product-card:hover { border-color: var(--blue-light); box-shadow: 0 8px 28px rgba(21,101,192,0.1); transform: translateY(-3px); }
+  .product-card__thumb {
+    aspect-ratio: 4/3;
+    background: var(--blue-pale);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .product-card__thumb svg { width: 56px; height: 56px; stroke: var(--blue); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .product-card:nth-child(2) .product-card__thumb { background: #E8F5E9; }
+  .product-card:nth-child(2) .product-card__thumb svg { stroke: #388E3C; }
+  .product-card:nth-child(3) .product-card__thumb { background: #FFF3E0; }
+  .product-card:nth-child(3) .product-card__thumb svg { stroke: #E65100; }
+  .product-card:nth-child(4) .product-card__thumb { background: #F3E5F5; }
+  .product-card:nth-child(4) .product-card__thumb svg { stroke: #7B1FA2; }
+  .product-card:nth-child(5) .product-card__thumb { background: #E0F2F1; }
+  .product-card:nth-child(5) .product-card__thumb svg { stroke: #00695C; }
+  .product-card:nth-child(6) .product-card__thumb { background: #FFF8E1; }
+  .product-card:nth-child(6) .product-card__thumb svg { stroke: #F57F17; }
+  .product-card:nth-child(7) .product-card__thumb { background: #FCE4EC; }
+  .product-card:nth-child(7) .product-card__thumb svg { stroke: #C62828; }
+  .product-card:nth-child(8) .product-card__thumb { background: #E8EAF6; }
+  .product-card:nth-child(8) .product-card__thumb svg { stroke: #283593; }
+  .product-card__body { padding: 18px 20px; }
+  .product-card__cat { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-400); margin-bottom: 6px; }
+  .product-card__name { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .product-card__desc { font-size: 12.5px; color: var(--grey-600); line-height: 1.6; }
+
+  /* ── PARTNER ────────────────────────────────────────────────── */
+  .partner { padding: var(--section-pad); background: var(--grey-50); }
+  .partner__head { text-align: center; max-width: 560px; margin: 0 auto 56px; }
+  .partner__grid { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .partner-card {
+    background: var(--white);
+    border: 1px solid var(--grey-100);
+    border-radius: 16px;
+    padding: 40px 32px;
+    display: flex; flex-direction: column;
+    transition: all 0.25s;
+  }
+  .partner-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.07); transform: translateY(-4px); }
+  .partner-card--featured {
+    background: var(--navy);
+    border-color: var(--navy);
+  }
+  .partner-card__tag {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    background: var(--blue-pale); color: var(--blue);
+    margin-bottom: 24px; width: fit-content;
+  }
+  .partner-card--featured .partner-card__tag { background: rgba(21,101,192,0.25); color: var(--accent); }
+  .partner-card__title { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 12px; }
+  .partner-card--featured .partner-card__title { color: var(--white); }
+  .partner-card__sub { font-size: 14px; line-height: 1.7; color: var(--grey-600); margin-bottom: 28px; }
+  .partner-card--featured .partner-card__sub { color: rgba(255,255,255,0.55); }
+  .partner-card__list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; flex: 1; }
+  .partner-card__list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--grey-600); line-height: 1.5; }
+  .partner-card--featured .partner-card__list li { color: rgba(255,255,255,0.65); }
+  .partner-card__check { width: 18px; height: 18px; background: var(--blue-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .partner-card--featured .partner-card__check { background: rgba(21,101,192,0.3); }
+  .partner-card__check svg { width: 10px; height: 10px; stroke: var(--blue); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+  .partner-card--featured .partner-card__check svg { stroke: var(--accent); }
+
+  /* ── IMPACT ─────────────────────────────────────────────────── */
+  .impact {
+    padding: 72px 24px;
+    background: var(--blue);
+    position: relative; overflow: hidden;
+  }
+  .impact__bg { position: absolute; inset: 0; background: linear-gradient(135deg, #0D47A1 0%, #1565C0 50%, #1976D2 100%); }
+  .impact__inner { max-width: var(--max-w); margin: 0 auto; position: relative; z-index: 1; }
+  .impact__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 40px; }
+  .impact__stat { text-align: center; }
+  .impact__num {
+    font-family: var(--font-serif);
+    font-size: clamp(36px, 4vw, 52px);
+    color: var(--white);
+    line-height: 1; margin-bottom: 8px;
+  }
+  .impact__num span { color: var(--accent); }
+  .impact__label { font-size: 13px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; }
+  .impact__div { width: 1px; background: rgba(255,255,255,0.12); }
+
+  /* ── PROCESS ─────────────────────────────────────────────────── */
+  .process { padding: var(--section-pad); background: var(--white); }
+  .process__head { text-align: center; max-width: 560px; margin: 0 auto 56px; }
+  .process__inner { max-width: var(--max-w); margin: 0 auto; }
+  .process__steps {
+    display: flex; align-items: flex-start; gap: 0; position: relative;
+  }
+  .process__step {
+    flex: 1; text-align: center; padding: 0 16px; position: relative;
+  }
+  .process__step:not(:last-child)::after {
+    content: ''; position: absolute;
+    top: 36px; left: calc(50% + 36px); right: calc(-50% + 36px);
+    height: 1.5px;
+    background: linear-gradient(90deg, var(--blue) 0%, var(--grey-100) 100%);
+  }
+  .process__icon {
+    width: 72px; height: 72px;
+    background: var(--navy);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 1.5px var(--grey-100);
+    position: relative; z-index: 1;
+  }
+  .process__step:nth-child(2) .process__icon { background: var(--blue); }
+  .process__step:nth-child(3) .process__icon { background: var(--blue-mid); }
+  .process__step:nth-child(4) .process__icon { background: #0D47A1; }
+  .process__step:nth-child(5) .process__icon { background: var(--success); }
+  .process__icon svg { width: 30px; height: 30px; stroke: var(--white); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .process__step-num { font-size: 11px; font-weight: 700; color: var(--grey-400); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+  .process__step-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .process__step-body { font-size: 13px; color: var(--grey-600); line-height: 1.6; }
+
+  /* ── TESTIMONIALS ─────────────────────────────────────────────── */
+  .testimonials { padding: var(--section-pad); background: var(--grey-50); }
+  .testimonials__head { text-align: center; max-width: 560px; margin: 0 auto 56px; }
+  .testimonials__grid { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .testi-card {
+    background: var(--white);
+    border: 1px solid var(--grey-100);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex; flex-direction: column;
+  }
+  .testi-card__quote-mark { font-family: var(--font-serif); font-size: 56px; color: var(--blue-pale); line-height: 1; margin-bottom: 16px; }
+  .testi-card__body { font-size: 15px; line-height: 1.75; color: var(--grey-600); margin-bottom: 28px; flex: 1; font-style: italic; }
+  .testi-card__author { display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--grey-100); padding-top: 20px; }
+  .testi-card__avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-serif); font-size: 16px; color: var(--white); font-weight: 700;
+    flex-shrink: 0;
+  }
+  .testi-card:nth-child(2) .testi-card__avatar { background: var(--blue); }
+  .testi-card:nth-child(3) .testi-card__avatar { background: var(--success); }
+  .testi-card__name { font-size: 14px; font-weight: 700; color: var(--navy); }
+  .testi-card__role { font-size: 12px; color: var(--grey-400); margin-top: 2px; }
+  .testi-card__stars { display: flex; gap: 3px; margin-bottom: 6px; }
+  .testi-card__stars svg { width: 14px; height: 14px; fill: #F59E0B; stroke: none; }
+
+  /* ── LEAD GEN ─────────────────────────────────────────────────── */
+  .lead {
+    padding: var(--section-pad);
+    background: var(--navy);
+    position: relative; overflow: hidden;
+  }
+  .lead__bg { position: absolute; inset: 0; background: radial-gradient(ellipse 900px 600px at 50% 100%, rgba(21,101,192,0.2) 0%, transparent 70%); }
+  .lead__inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; text-align: center; }
+  .lead__form {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 48px;
+    margin-top: 40px;
+    backdrop-filter: blur(8px);
+  }
+  .lead__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .lead__input {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 8px;
+    font-family: var(--font-sans);
+    font-size: 14px; color: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .lead__input::placeholder { color: rgba(255,255,255,0.35); }
+  .lead__input:focus { border-color: rgba(33,150,243,0.6); }
+  .lead__select {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 8px;
+    font-family: var(--font-sans);
+    font-size: 14px; color: rgba(255,255,255,0.6);
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none; appearance: none;
+  }
+  .lead__select:focus { border-color: rgba(33,150,243,0.6); }
+  .lead__select option { background: var(--navy); color: var(--white); }
+  .lead__textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 8px;
+    font-family: var(--font-sans);
+    font-size: 14px; color: var(--white);
+    outline: none;
+    resize: vertical; min-height: 100px;
+    transition: border-color 0.2s;
+    margin-bottom: 16px;
+  }
+  .lead__textarea::placeholder { color: rgba(255,255,255,0.35); }
+  .lead__textarea:focus { border-color: rgba(33,150,243,0.6); }
+  .lead__btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--blue-light);
+    color: var(--white);
+    border: none; border-radius: 8px;
+    font-family: var(--font-sans); font-size: 15px; font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .lead__btn:hover { background: #1976D2; transform: translateY(-1px); }
+  .lead__disclaimer { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 14px; }
+
+  /* ── FOOTER ─────────────────────────────────────────────────── */
+  .footer {
+    background: var(--navy-mid);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 64px 24px 32px;
+  }
+  .footer__inner { max-width: var(--max-w); margin: 0 auto; }
+  .footer__top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  .footer__brand p { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.45); margin: 16px 0 24px; max-width: 280px; }
+  .footer__col-title { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 18px; }
+  .footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer__col ul a { font-size: 14px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer__col ul a:hover { color: var(--white); }
+  .footer__contact { display: flex; flex-direction: column; gap: 12px; }
+  .footer__contact-item { display: flex; align-items: flex-start; gap: 10px; }
+  .footer__contact-item svg { width: 16px; height: 16px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-top: 2px; }
+  .footer__contact-item span { font-size: 13.5px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+  .footer__bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .footer__copy { font-size: 13px; color: rgba(255,255,255,0.3); }
+  .footer__bottom-links { display: flex; gap: 24px; }
+  .footer__bottom-links a { font-size: 13px; color: rgba(255,255,255,0.3); text-decoration: none; }
+  .footer__bottom-links a:hover { color: rgba(255,255,255,0.6); }
+  .footer__certifications { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+  .footer__cert {
+    padding: 6px 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.06em; color: rgba(255,255,255,0.35);
+  }
+  .footer__social { display: flex; gap: 12px; margin-top: 24px; }
+  .footer__social a { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+  .footer__social a:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.05); }
+  .footer__social svg { width: 16px; height: 16px; stroke: rgba(255,255,255,0.5); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ── ANIMATIONS ─────────────────────────────────────────────── */
+  @keyframes count-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .animate-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .animate-in.visible { opacity: 1; transform: translateY(0); }
+  .animate-in:nth-child(2) { transition-delay: 0.1s; }
+  .animate-in:nth-child(3) { transition-delay: 0.2s; }
+  .animate-in:nth-child(4) { transition-delay: 0.3s; }
+  .animate-in:nth-child(5) { transition-delay: 0.4s; }
+
+  /* ── MOBILE NAV ──────────────────────────────────────────────── */
+  .mobile-menu {
+    display: none;
+    position: fixed; top: 68px; left: 0; right: 0;
+    background: var(--navy-mid);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    z-index: 99;
+    padding: 24px;
+  }
+  .mobile-menu.open { display: block; }
+  .mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .mobile-menu ul a { display: block; padding: 10px 0; font-size: 15px; color: rgba(255,255,255,0.7); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .mobile-menu__ctas { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+
+  /* ── RESPONSIVE ─────────────────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .verticals__grid { grid-template-columns: repeat(2, 1fr); }
+    .products__grid { grid-template-columns: repeat(2, 1fr); }
+    .why__grid { grid-template-columns: repeat(2, 1fr); }
+    .impact__grid { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .footer__top { grid-template-columns: 1fr 1fr; gap: 32px; }
+  }
+  @media (max-width: 768px) {
+    :root { --section-pad: 64px 20px; }
+    .nav__links, .nav__cta { display: none; }
+    .nav__hamburger { display: flex; flex-direction: column; }
+    .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero__visual { display: none; }
+    .hero h1 { font-size: 36px; }
+    .about__inner { grid-template-columns: 1fr; gap: 40px; }
+    .about__pillars { grid-template-columns: 1fr; }
+    .verticals__grid { grid-template-columns: 1fr; }
+    .why__grid { grid-template-columns: 1fr; }
+    .products__grid { grid-template-columns: 1fr 1fr; }
+    .partner__grid { grid-template-columns: 1fr; }
+    .impact__grid { grid-template-columns: repeat(2, 1fr); }
+    .process__steps { flex-direction: column; align-items: center; }
+    .process__step:not(:last-child)::after { display: none; }
+    .testimonials__grid { grid-template-columns: 1fr; }
+    .lead__grid { grid-template-columns: 1fr; }
+    .lead__form { padding: 28px 24px; }
+    .footer__top { grid-template-columns: 1fr; gap: 28px; }
+    .trust-bar__div { display: none; }
+    .trust-bar__inner { justify-content: center; gap: 20px 32px; }
+    .hero__stats { gap: 24px; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ──────────────────────────────────────────── -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo">
+      <div class="nav__logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <span class="nav__brand">Medflow <span>Innovations</span></span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#verticals">Solutions</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#partner">Partner</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="#contact" class="btn-nav btn-nav--ghost">Partner With Us</a>
+      <a href="#contact" class="btn-nav btn-nav--solid">Request Quote</a>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#verticals">Solutions</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#partner">Partner</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="mobile-menu__ctas">
+    <a href="#contact" class="btn btn-ghost" style="justify-content:center">Partner With Us</a>
+    <a href="#contact" class="btn btn-primary" style="justify-content:center">Request Quote</a>
+  </div>
+</div>
+
+
+<!-- ── HERO ─────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__grid-lines"></div>
+  <div class="hero__inner">
+    <div class="hero__content">
+      <div class="hero__badge">
+        <div class="hero__badge-dot"></div>
+        <span class="hero__badge-text">India's Healthcare Supply Innovator</span>
+      </div>
+      <h1>
+        Powering India's<br>
+        Healthcare<br>
+        <em>Infrastructure</em>
+      </h1>
+      <p class="hero__sub">
+        Medflow Innovations delivers world-class medical devices, surgical consumables, and end-to-end supply chain solutions to hospitals, distributors, and healthcare institutions across India.
+      </p>
+      <div class="hero__ctas">
+        <a href="#products" class="btn btn-primary">
+          Explore Products
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#partner" class="btn btn-outline">Become a Distribution Partner</a>
+      </div>
+      <div class="hero__stats">
+        <div>
+          <div class="hero__stat-num">500<span>+</span></div>
+          <div class="hero__stat-label">Product SKUs</div>
+        </div>
+        <div>
+          <div class="hero__stat-num">28<span>+</span></div>
+          <div class="hero__stat-label">States Served</div>
+        </div>
+        <div>
+          <div class="hero__stat-num">99<span>%</span></div>
+          <div class="hero__stat-label">Order Fulfilment</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__floating-badge">ISO Certified</div>
+      <div class="hero__visual-card">
+        <div class="hero__visual-img">
+          <svg class="hero__device-svg" viewBox="0 0 440 330" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background pattern -->
+            <rect width="440" height="330" fill="#0D1F3C"/>
+            <line x1="0" y1="0" x2="440" y2="330" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+            <!-- Grid -->
+            <pattern id="heroGrid" patternUnits="userSpaceOnUse" width="30" height="30">
+              <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+            </pattern>
+            <rect width="440" height="330" fill="url(#heroGrid)"/>
+            <!-- Hospital building abstraction -->
+            <rect x="30" y="80" width="120" height="200" rx="6" fill="rgba(21,101,192,0.15)" stroke="rgba(21,101,192,0.3)" stroke-width="1"/>
+            <!-- Windows -->
+            <rect x="44" y="98" width="20" height="16" rx="2" fill="rgba(33,150,243,0.4)"/>
+            <rect x="74" y="98" width="20" height="16" rx="2" fill="rgba(33,150,243,0.3)"/>
+            <rect x="104" y="98" width="20" height="16" rx="2" fill="rgba(33,150,243,0.5)"/>
+            <rect x="44" y="126" width="20" height="16" rx="2" fill="rgba(33,150,243,0.25)"/>
+            <rect x="74" y="126" width="20" height="16" rx="2" fill="rgba(33,150,243,0.45)"/>
+            <rect x="104" y="126" width="20" height="16" rx="2" fill="rgba(33,150,243,0.3)"/>
+            <rect x="44" y="154" width="20" height="16" rx="2" fill="rgba(33,150,243,0.35)"/>
+            <rect x="74" y="154" width="20" height="16" rx="2" fill="rgba(33,150,243,0.2)"/>
+            <rect x="104" y="154" width="20" height="16" rx="2" fill="rgba(33,150,243,0.4)"/>
+            <!-- Cross symbol -->
+            <rect x="78" y="56" width="32" height="10" rx="3" fill="rgba(0,180,216,0.6)"/>
+            <rect x="84" y="50" width="20" height="22" rx="3" fill="rgba(0,180,216,0.3)"/>
+            <rect x="85" y="50" width="18" height="22" rx="3" fill="rgba(0,180,216,0.5)"/>
+            <!-- Connecting flow lines -->
+            <path d="M 150 165 Q 220 140 290 165" stroke="rgba(0,180,216,0.5)" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
+            <circle cx="150" cy="165" r="4" fill="rgba(0,180,216,0.8)"/>
+            <circle cx="290" cy="165" r="4" fill="rgba(0,180,216,0.8)"/>
+            <!-- Medical device icon center -->
+            <rect x="185" y="120" width="70" height="90" rx="10" fill="rgba(21,101,192,0.2)" stroke="rgba(21,101,192,0.4)" stroke-width="1.5"/>
+            <path d="M 207 155 L 215 140 L 220 150 L 226 135 L 231 150 L 237 142 L 243 155" stroke="rgba(0,180,216,0.8)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="220" y="200" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="10" font-family="Inter,sans-serif" font-weight="500">MONITORING</text>
+            <!-- Right panel - inventory/supply chain -->
+            <rect x="290" y="80" width="120" height="200" rx="6" fill="rgba(21,101,192,0.1)" stroke="rgba(21,101,192,0.2)" stroke-width="1"/>
+            <text x="350" y="106" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9" font-family="Inter,sans-serif" font-weight="600" letter-spacing="0.08em">SUPPLY CHAIN</text>
+            <!-- Progress bars -->
+            <rect x="306" y="118" width="68" height="5" rx="2.5" fill="rgba(255,255,255,0.08)"/>
+            <rect x="306" y="118" width="58" height="5" rx="2.5" fill="rgba(0,180,216,0.6)"/>
+            <text x="306" y="115" fill="rgba(255,255,255,0.35)" font-size="8" font-family="Inter,sans-serif">Devices</text>
+            <rect x="306" y="136" width="68" height="5" rx="2.5" fill="rgba(255,255,255,0.08)"/>
+            <rect x="306" y="136" width="50" height="5" rx="2.5" fill="rgba(33,150,243,0.6)"/>
+            <text x="306" y="133" fill="rgba(255,255,255,0.35)" font-size="8" font-family="Inter,sans-serif">Consumables</text>
+            <rect x="306" y="154" width="68" height="5" rx="2.5" fill="rgba(255,255,255,0.08)"/>
+            <rect x="306" y="154" width="62" height="5" rx="2.5" fill="rgba(21,101,192,0.7)"/>
+            <text x="306" y="151" fill="rgba(255,255,255,0.35)" font-size="8" font-family="Inter,sans-serif">Pharma Equip</text>
+            <!-- Bottom stats bar -->
+            <rect x="30" y="295" width="380" height="2" fill="rgba(255,255,255,0.05)" rx="1"/>
+            <rect x="30" y="295" width="300" height="2" fill="rgba(0,180,216,0.4)" rx="1"/>
+            <text x="30" y="318" fill="rgba(255,255,255,0.3)" font-size="9" font-family="Inter,sans-serif">Order Fulfilment: 99.3%</text>
+            <circle cx="400" cy="310" r="12" fill="rgba(27,138,90,0.2)" stroke="rgba(27,138,90,0.5)" stroke-width="1"/>
+            <text x="400" y="314" text-anchor="middle" fill="rgba(27,138,90,0.9)" font-size="9" font-family="Inter,sans-serif" font-weight="600">LIVE</text>
+          </svg>
+        </div>
+        <div class="hero__pills">
+          <span class="hero__pill">Medical Devices</span>
+          <span class="hero__pill">Surgical Consumables</span>
+          <span class="hero__pill">Private Label</span>
+          <span class="hero__pill">Pan-India Logistics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── TRUST BAR ─────────────────────────────────────────────── -->
+<div class="trust-bar">
+  <div class="trust-bar__inner">
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      </div>
+      <div>
+        <div class="trust-bar__label">Quality Assurance</div>
+        <div class="trust-bar__sub">ISO 13485 Aligned</div>
+      </div>
+    </div>
+    <div class="trust-bar__div"></div>
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 7a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2M4 7V5a2 2 0 012-2h8a2 2 0 012 2v2"/></svg>
+      </div>
+      <div>
+        <div class="trust-bar__label">Reliable Supply Chain</div>
+        <div class="trust-bar__sub">Just-in-Time Delivery</div>
+      </div>
+    </div>
+    <div class="trust-bar__div"></div>
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      </div>
+      <div>
+        <div class="trust-bar__label">Nationwide Reach</div>
+        <div class="trust-bar__sub">28+ States Covered</div>
+      </div>
+    </div>
+    <div class="trust-bar__div"></div>
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+      </div>
+      <div>
+        <div class="trust-bar__label">Healthcare-First</div>
+        <div class="trust-bar__sub">Patient Safety Priority</div>
+      </div>
+    </div>
+    <div class="trust-bar__div"></div>
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+      </div>
+      <div>
+        <div class="trust-bar__label">Regulatory Compliant</div>
+        <div class="trust-bar__sub">CDSCO & MDR Ready</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── ABOUT ─────────────────────────────────────────────────── -->
+<section class="about" id="about">
+  <div class="about__inner">
+    <div class="about__visual">
+      <div class="about__visual-main">
+        <div class="about__visual-bg"></div>
+        <div class="about__visual-grid"></div>
+        <div class="about__visual-badge">Est. 2024 · India</div>
+        <div class="about__visual-content">
+          <div class="about__visual-title">Built for India's<br>Healthcare Future</div>
+          <div class="about__visual-sub">Connecting manufacturers to bedside. From procurement to post-delivery support, Medflow sits at the heart of India's healthcare supply chain.</div>
+        </div>
+      </div>
+      <div class="about__floating">
+        <div class="about__floating-num">₹500<span>Cr+</span></div>
+        <div class="about__floating-label">Target GMV by 2027</div>
+      </div>
+    </div>
+    <div class="about__content">
+      <div class="eyebrow">About Medflow Innovations</div>
+      <h2 class="section-title">Where Clinical Needs<br>Meet Supply Excellence</h2>
+      <p class="about__body">
+        Medflow Innovations was founded on a single conviction: India's hospitals deserve the same access to high-quality medical technology and reliable supply chains as the world's best healthcare systems. We exist to close that gap.
+      </p>
+      <p class="about__body">
+        We operate across the full healthcare value chain — sourcing and distributing medical devices and surgical consumables, enabling private label manufacturing for institutional buyers, and building the procurement infrastructure that hospitals need to focus on what matters: patient care.
+      </p>
+      <p class="about__body">
+        With a national distribution network, a growing portfolio of 500+ SKUs, and deep relationships with global manufacturers, Medflow is positioned to be India's most trusted healthcare supply partner — for hospitals, for investors, and for the patients they serve.
+      </p>
+      <div class="about__pillars">
+        <div class="about__pillar">
+          <div class="about__pillar-title">Our Mission</div>
+          <div class="about__pillar-body">Make quality healthcare products universally accessible and reliably available across every district in India.</div>
+        </div>
+        <div class="about__pillar">
+          <div class="about__pillar-title">Our Vision</div>
+          <div class="about__pillar-body">To be India's foremost healthcare supply chain infrastructure company within five years.</div>
+        </div>
+        <div class="about__pillar">
+          <div class="about__pillar-title">Market Position</div>
+          <div class="about__pillar-body">Bridging the gap between global medical manufacturers and India's growing network of hospitals and clinics.</div>
+        </div>
+        <div class="about__pillar">
+          <div class="about__pillar-title">Long-Term Ambition</div>
+          <div class="about__pillar-body">National expansion, institutional partnerships, and becoming the preferred supplier to India's top 500 hospitals.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── BUSINESS VERTICALS ─────────────────────────────────────── -->
+<section class="verticals" id="verticals">
+  <div class="verticals__head">
+    <div class="eyebrow">Business Verticals</div>
+    <h2 class="section-title">Five Pillars of Our<br>Healthcare Business</h2>
+    <p class="section-sub">Each vertical is built to deliver measurable value to a specific segment of the healthcare supply ecosystem.</p>
+  </div>
+  <div class="verticals__grid">
+    <div class="vertical-card animate-in">
+      <div class="vertical-card__num">01</div>
+      <div class="vertical-card__icon">
+        <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+      </div>
+      <div class="vertical-card__title">Medical Devices</div>
+      <div class="vertical-card__body">A comprehensive portfolio of diagnostic, monitoring, and therapeutic devices — sourced from certified global manufacturers and made available to hospitals and clinics across India. From ICU equipment to point-of-care diagnostics.</div>
+      <a href="#contact" class="vertical-card__link">Explore Devices →</a>
+    </div>
+    <div class="vertical-card animate-in">
+      <div class="vertical-card__num">02</div>
+      <div class="vertical-card__icon">
+        <svg viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+      </div>
+      <div class="vertical-card__title">Surgical Consumables</div>
+      <div class="vertical-card__body">High-quality, procedure-specific consumables including sutures, drapes, gloves, syringes, catheters, and wound care products. Delivered in sterile, traceable packaging to operating theatres and procedural units.</div>
+      <a href="#contact" class="vertical-card__link">View Consumables →</a>
+    </div>
+    <div class="vertical-card animate-in">
+      <div class="vertical-card__num">03</div>
+      <div class="vertical-card__icon">
+        <svg viewBox="0 0 24 24"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+      </div>
+      <div class="vertical-card__title">Distribution Network</div>
+      <div class="vertical-card__body">A robust pan-India distribution infrastructure connecting manufacturers to hospitals, nursing homes, super stockists, and retail pharmacies. Cold-chain capable, GPS-tracked, and FIFO-compliant across all fulfilment centres.</div>
+      <a href="#contact" class="vertical-card__link">Distribution Partners →</a>
+    </div>
+    <div class="vertical-card animate-in">
+      <div class="vertical-card__num">04</div>
+      <div class="vertical-card__icon">
+        <svg viewBox="0 0 24 24"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+      </div>
+      <div class="vertical-card__title">Private Label Manufacturing</div>
+      <div class="vertical-card__body">End-to-end private label solutions for hospitals, pharmacy chains, and healthcare groups. We manage specifications, quality control, regulatory submissions, and packaging — so you launch faster with confidence.</div>
+      <a href="#contact" class="vertical-card__link">Private Label Enquiry →</a>
+    </div>
+    <div class="vertical-card animate-in">
+      <div class="vertical-card__num">05</div>
+      <div class="vertical-card__icon">
+        <svg viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 00-1-1h-2a1 1 0 00-1 1v5m4 0H9"/></svg>
+      </div>
+      <div class="vertical-card__title">Hospital Procurement Solutions</div>
+      <div class="vertical-card__body">Dedicated procurement management for hospital groups and healthcare systems. Centralised inventory planning, vendor consolidation, cost-optimised sourcing, and real-time supply analytics to reduce procurement overhead by up to 35%.</div>
+      <a href="#contact" class="vertical-card__link">Start Procurement →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── WHY CHOOSE ────────────────────────────────────────────── -->
+<section class="why">
+  <div class="why__bg"></div>
+  <div class="why__inner">
+    <div class="why__header">
+      <div>
+        <div class="eyebrow eyebrow--light">Why Medflow</div>
+        <h2 class="section-title section-title--light">The Medflow<br>Difference</h2>
+      </div>
+      <a href="#contact" class="btn btn-outline">Speak to Our Team →</a>
+    </div>
+    <div class="why__grid">
+      <div class="why-item animate-in">
+        <div class="why-item__num">01</div>
+        <div class="why-item__icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <div class="why-item__title">Verified Quality Products</div>
+        <div class="why-item__body">Every product in our catalogue passes multi-stage quality verification. We work only with manufacturers who meet global regulatory standards, ensuring every device and consumable you receive is safe, effective, and traceable.</div>
+      </div>
+      <div class="why-item animate-in">
+        <div class="why-item__num">02</div>
+        <div class="why-item__icon">
+          <svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <div class="why-item__title">Strategic Partnerships</div>
+        <div class="why-item__body">We hold exclusive and preferred distribution agreements with leading international and domestic manufacturers, giving our hospital and distributor partners access to products and pricing not available through conventional channels.</div>
+      </div>
+      <div class="why-item animate-in">
+        <div class="why-item__num">03</div>
+        <div class="why-item__icon">
+          <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <div class="why-item__title">Fast Procurement Cycles</div>
+        <div class="why-item__body">Standard orders fulfilled in 24–72 hours. Emergency procurement managed within hours. Our advanced inventory planning system ensures critical items are never out of stock, so your procurement team is never left waiting.</div>
+      </div>
+      <div class="why-item animate-in">
+        <div class="why-item__num">04</div>
+        <div class="why-item__icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <div class="why-item__title">Regulatory Compliance</div>
+        <div class="why-item__body">Full CDSCO documentation, MDR 2017 compliance, and up-to-date import licences for every product category. Our regulatory team handles all statutory requirements so your institution remains fully compliant — always.</div>
+      </div>
+      <div class="why-item animate-in">
+        <div class="why-item__num">05</div>
+        <div class="why-item__icon">
+          <svg viewBox="0 0 24 24"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/><path d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2 2h2m4-2h8m-8 0l-4-4 4-4m8 8a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <div class="why-item__title">Reliable Last-Mile Logistics</div>
+        <div class="why-item__body">GPS-tracked deliveries, temperature-controlled transport for sensitive products, and a dedicated logistics team managing the last mile to hospitals and clinics in Tier 1, 2, and 3 cities across India.</div>
+      </div>
+      <div class="why-item animate-in">
+        <div class="why-item__num">06</div>
+        <div class="why-item__icon">
+          <svg viewBox="0 0 24 24"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        </div>
+        <div class="why-item__title">Dedicated Customer Support</div>
+        <div class="why-item__body">A named account manager for every institutional client. 24/7 emergency support line for critical supply needs. Post-delivery technical assistance and in-service training for complex medical equipment — because our relationship doesn't end at delivery.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PRODUCT CATEGORIES ─────────────────────────────────────── -->
+<section class="products" id="products">
+  <div class="products__head">
+    <div class="eyebrow">Featured Product Categories</div>
+    <h2 class="section-title">500+ SKUs Across<br>Core Healthcare Segments</h2>
+    <p class="section-sub">Medically essential. Rigorously sourced. Ready to ship.</p>
+  </div>
+  <div class="products__grid">
+    <div class="product-card">
+      <div class="product-card__thumb">
+        <svg viewBox="0 0 80 60" fill="none">
+          <rect x="24" y="10" width="32" height="38" rx="4" stroke="currentColor" stroke-width="2"/>
+          <rect x="34" y="20" width="12" height="4" rx="1" fill="currentColor" opacity="0.4"/>
+          <circle cx="40" cy="34" r="6" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M40 31v6M37 34h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="product-card__body">
+        <div class="product-card__cat">Monitoring</div>
+        <div class="product-card__name">Patient Monitors</div>
+        <div class="product-card__desc">Multi-parameter ICU & ward monitors, ECG machines, pulse oximeters</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-card__thumb">
+        <svg viewBox="0 0 80 60" fill="none">
+          <path d="M20 45 Q30 20 40 15 Q50 10 55 30 Q60 45 65 45" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <circle cx="40" cy="15" r="5" fill="currentColor" opacity="0.3"/>
+          <path d="M30 50h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="product-card__body">
+        <div class="product-card__cat">Surgical</div>
+        <div class="product-card__name">Surgical Sutures</div>
+        <div class="product-card__desc">Absorbable and non-absorbable sutures, needles, and wound closure strips</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-card__thumb">
+        <svg viewBox="0 0 80 60" fill="none">
+          <rect x="20" y="22" width="40" height="16" rx="8" stroke="currentColor" stroke-width="2"/>
+          <circle cx="36" cy="30" r="5" fill="currentColor" opacity="0.3"/>
+          <path d="M48 22v-8M48 38v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="product-card__body">
+        <div class="product-card__cat">Infusion</div>
+        <div class="product-card__name">IV Catheters & Sets</div>
+        <div class="product-card__desc">Peripheral cannulas, IV infusion sets, extension lines, stopcocks</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-card__thumb">
+        <svg viewBox="0 0 80 60" fill="none">
+          <rect x="28" y="8" width="24" height="44" rx="6" stroke="currentColor" stroke-width="2"/>
+          <rect x="34" y="16" width="12" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M38 26v6M35 29h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M34 40h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="product-card__body">
+        <div class="product-card__cat">Diagnostics</div>
+        <div class="product-card__name">Diagnostic Kits</div>
+        <div class="product-card__desc">Rapid antigen tests, blood glucose, urinalysis, and infectious disease panels</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-card__thumb">
+        <svg viewBox="0 0 80 60" fill="none">
+          <path d="M25 45 L25 20 Q25 15 30 15 L50 15 Q55 15 55 20 L55 45" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M22 45h36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M33 28 Q40 22 47 28" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M35 35 Q40 30 45 35" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="product-card__body">
+        <div class="product-card__cat">Protective</div>
+        <div class="product-card__name">PPE & Protection</div>
+        <div class="product-card__desc">Surgical gowns, gloves, N95 respirators, face shields, drapes</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-card__thumb">
+        <svg viewBox="0 0 80 60" fill="none">
+          <circle cx="40" cy="28" r="14" stroke="currentColor" stroke-width="2"/>
+          <path d="M40 20v8l5 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M26 42 Q28 48 32 50 Q40 52 48 50 Q52 48 54 42" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="product-card__body">
+        <div class="product-card__cat">Wound Care</div>
+        <div class="product-card__name">Wound Management</div>
+        <div class="product-card__desc">Wound dressings, bandages, adhesive strips, hydrocolloid and foam dressings</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-card__thumb">
+        <svg viewBox="0 0 80 60" fill="none">
+          <path d="M30 48 L25 30 Q22 18 32 16 L40 14 L48 16 Q58 18 55 30 L50 48" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M30 48 Q40 50 50 48" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="40" cy="28" r="5" fill="currentColor" opacity="0.25"/>
+        </svg>
+      </div>
+      <div class="product-card__body">
+        <div class="product-card__cat">Anaesthesia</div>
+        <div class="product-card__name">Anaesthesia Supplies</div>
+        <div class="product-card__desc">Breathing circuits, laryngoscopes, LMAs, endotracheal tubes, airways</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-card__thumb">
+        <svg viewBox="0 0 80 60" fill="none">
+          <rect x="18" y="18" width="44" height="30" rx="5" stroke="currentColor" stroke-width="2"/>
+          <path d="M30 33 L36 27 L40 32 L44 25 L50 33" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <rect x="24" y="12" width="8" height="6" rx="2" fill="currentColor" opacity="0.3"/>
+          <rect x="48" y="12" width="8" height="6" rx="2" fill="currentColor" opacity="0.3"/>
+        </svg>
+      </div>
+      <div class="product-card__body">
+        <div class="product-card__cat">Life Support</div>
+        <div class="product-card__name">Critical Care Devices</div>
+        <div class="product-card__desc">Ventilators, defibrillators, infusion pumps, syringe pumps, suction units</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PARTNER ────────────────────────────────────────────────── -->
+<section class="partner" id="partner">
+  <div class="partner__head">
+    <div class="eyebrow">Partnership Programmes</div>
+    <h2 class="section-title">Grow With Medflow</h2>
+    <p class="section-sub">Whether you're a hospital, distributor, or manufacturer — we have a structured partnership framework designed to create mutual, long-term value.</p>
+  </div>
+  <div class="partner__grid">
+    <div class="partner-card">
+      <div class="partner-card__tag">For Hospitals</div>
+      <div class="partner-card__title">Hospital Supply Agreement</div>
+      <div class="partner-card__sub">Consolidate your medical supply procurement under a single, reliable partner. Reduce supplier fragmentation, negotiate better pricing, and eliminate stockouts — permanently.</div>
+      <ul class="partner-card__list">
+        <li><span class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span> Dedicated account manager and procurement team</li>
+        <li><span class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span> 24–48 hour standard order fulfilment</li>
+        <li><span class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span> Annual rate contracts with price protection</li>
+        <li><span class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span> Regulatory documentation provided</li>
+        <li><span class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span> In-service training and technical support</li>
+      </ul>
+      <a href="#contact" class="btn btn-ghost">Start Hospital Partnership →</a>
+    </div>
+    <div class="partner-card partner-card--featured">
+      <div class="partner-card__tag">For Distributors</div>
+      <div class="partner-card__title">Distribution Partner Programme</div>
+      <div class="partner-card__sub">Expand your healthcare portfolio with high-margin, in-demand medical products. Access exclusive territories, competitive margins, and dedicated support to scale your distribution business.</div>
+      <ul class="partner-card__list">
+        <li><span class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span> Exclusive or preferred territory allocation</li>
+        <li><span class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span> Competitive margins and volume incentives</li>
+        <li><span class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span> Marketing support and product training</li>
+        <li><span class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span> Digital ordering portal with real-time inventory</li>
+        <li><span class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span> Credit facility for established partners</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary">Apply as Distributor →</a>
+    </div>
+    <div class="partner-card">
+      <div class="partner-card__tag">For Manufacturers</div>
+      <div class="partner-card__title">Manufacturing & OEM Partnership</div>
+      <div class="partner-card__sub">Leverage Medflow's distribution network, hospital relationships, and regulatory infrastructure to bring your products to market across India — faster and more efficiently than building independently.</div>
+      <ul class="partner-card__list">
+        <li><span class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span> Access to 1,000+ hospital buyers across India</li>
+        <li><span class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span> CDSCO import licensing and registration support</li>
+        <li><span class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span> Private label and OEM manufacturing capacity</li>
+        <li><span class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span> Co-marketing and tender support</li>
+        <li><span class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span> Transparent revenue-sharing models</li>
+      </ul>
+      <a href="#contact" class="btn btn-ghost">Explore Manufacturer Partnership →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── IMPACT ─────────────────────────────────────────────────── -->
+<section class="impact">
+  <div class="impact__bg"></div>
+  <div class="impact__inner">
+    <div class="impact__grid">
+      <div class="impact__stat">
+        <div class="impact__num" data-target="500">500<span>+</span></div>
+        <div class="impact__label">Product SKUs</div>
+      </div>
+      <div class="impact__stat">
+        <div class="impact__num" data-target="28">28<span>+</span></div>
+        <div class="impact__label">States Served</div>
+      </div>
+      <div class="impact__stat">
+        <div class="impact__num" data-target="99">99<span>%</span></div>
+        <div class="impact__label">Order Fulfilment Rate</div>
+      </div>
+      <div class="impact__stat">
+        <div class="impact__num">48<span>hr</span></div>
+        <div class="impact__label">Average Delivery Time</div>
+      </div>
+      <div class="impact__stat">
+        <div class="impact__num">₹500<span>Cr</span></div>
+        <div class="impact__label">Target GMV by 2027</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PROCESS ─────────────────────────────────────────────────── -->
+<section class="process">
+  <div class="process__head">
+    <div class="eyebrow">How We Operate</div>
+    <h2 class="section-title">From Source to Bedside —<br>The Medflow Process</h2>
+    <p class="section-sub">A five-step quality and delivery process that ensures every order reaches you on time, compliant, and ready to use.</p>
+  </div>
+  <div class="process__inner">
+    <div class="process__steps">
+      <div class="process__step">
+        <div class="process__icon">
+          <svg viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+        <div class="process__step-num">Step 01</div>
+        <div class="process__step-title">Global Sourcing</div>
+        <div class="process__step-body">Identifying and onboarding certified manufacturers across India, Europe, and Asia with full regulatory documentation.</div>
+      </div>
+      <div class="process__step">
+        <div class="process__icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <div class="process__step-num">Step 02</div>
+        <div class="process__step-title">Quality Verification</div>
+        <div class="process__step-body">Multi-stage incoming quality checks, batch traceability, and compliance audits before any product enters our fulfilment network.</div>
+      </div>
+      <div class="process__step">
+        <div class="process__icon">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16M4 7a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2M4 7V5a2 2 0 012-2h8a2 2 0 012 2v2"/></svg>
+        </div>
+        <div class="process__step-num">Step 03</div>
+        <div class="process__step-title">Smart Distribution</div>
+        <div class="process__step-body">Inventory allocated across strategic regional hubs using AI-driven demand forecasting to minimise lead times everywhere in India.</div>
+      </div>
+      <div class="process__step">
+        <div class="process__icon">
+          <svg viewBox="0 0 24 24"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/><path d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2 2h2m4-2h8m-8 0l-4-4 4-4m8 8a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <div class="process__step-num">Step 04</div>
+        <div class="process__step-title">Tracked Delivery</div>
+        <div class="process__step-body">GPS-monitored, temperature-controlled last-mile delivery directly to your hospital, clinic, or distribution point — with live tracking.</div>
+      </div>
+      <div class="process__step">
+        <div class="process__icon">
+          <svg viewBox="0 0 24 24"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        </div>
+        <div class="process__step-num">Step 05</div>
+        <div class="process__step-title">Post-Delivery Support</div>
+        <div class="process__step-body">Dedicated after-sales support, in-service training, preventive maintenance coordination, and 24/7 emergency replenishment.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── TESTIMONIALS ─────────────────────────────────────────────── -->
+<section class="testimonials">
+  <div class="testimonials__head">
+    <div class="eyebrow">Client Voices</div>
+    <h2 class="section-title">Trusted by Healthcare<br>Leaders Across India</h2>
+  </div>
+  <div class="testimonials__grid">
+    <div class="testi-card animate-in">
+      <div class="testi-card__quote-mark">"</div>
+      <div class="testi-card__stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="testi-card__body">Medflow has transformed our procurement. We've reduced our supplier base from 22 vendors to 3, cut procurement costs by 28%, and haven't had a single critical stockout in over a year. The reliability is simply on another level compared to what we had before.</div>
+      <div class="testi-card__author">
+        <div class="testi-card__avatar">RM</div>
+        <div>
+          <div class="testi-card__name">Dr. Ramesh Mehta</div>
+          <div class="testi-card__role">Chief Medical Officer · Apollo-class Multispeciality Hospital, Pune</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card animate-in">
+      <div class="testi-card__quote-mark">"</div>
+      <div class="testi-card__stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="testi-card__body">As a regional distributor, joining Medflow's partner programme was the best business decision we made. The exclusive territory allocation, product training, and credit support gave us the confidence to expand into three new districts in under six months. Our revenue grew 40% in year one.</div>
+      <div class="testi-card__author">
+        <div class="testi-card__avatar">SP</div>
+        <div>
+          <div class="testi-card__name">Suresh Patel</div>
+          <div class="testi-card__role">Managing Director · Patel Healthcare Distributors, Gujarat</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card animate-in">
+      <div class="testi-card__quote-mark">"</div>
+      <div class="testi-card__stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="testi-card__body">Medflow's private label service is genuinely impressive. They managed our CDSCO submission, coordinated the manufacturing audit, and delivered our branded consumable line to market in 14 weeks. That's a third of the time it would have taken us independently. The quality exceeded our specification.</div>
+      <div class="testi-card__author">
+        <div class="testi-card__avatar">AK</div>
+        <div>
+          <div class="testi-card__name">Anita Krishnan</div>
+          <div class="testi-card__role">VP Procurement · Wellness Hospital Group, Chennai & Bengaluru</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── LEAD GENERATION ─────────────────────────────────────────── -->
+<section class="lead" id="contact">
+  <div class="lead__bg"></div>
+  <div class="lead__inner">
+    <div class="eyebrow eyebrow--light">Get in Touch</div>
+    <h2 class="section-title section-title--light">Ready to Build a<br>Better Supply Chain?</h2>
+    <p class="section-sub section-sub--light" style="margin: 0 auto;">Whether you need a product catalogue, a distribution agreement, or a private label quote — our team responds within 4 business hours.</p>
+    <div class="lead__form">
+      <div class="lead__grid">
+        <input type="text" class="lead__input" placeholder="Full Name *">
+        <input type="text" class="lead__input" placeholder="Organisation Name *">
+        <input type="email" class="lead__input" placeholder="Email Address *">
+        <input type="tel" class="lead__input" placeholder="Phone Number">
+        <input type="text" class="lead__input" placeholder="City / State">
+        <select class="lead__select">
+          <option value="" disabled selected>I am a... *</option>
+          <option>Hospital / Healthcare Institution</option>
+          <option>Distributor / Super Stockist</option>
+          <option>Manufacturer / OEM</option>
+          <option>Investor / Strategic Partner</option>
+          <option>Government / Tender Procurement</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <select class="lead__select" style="width:100%; margin-bottom:16px">
+        <option value="" disabled selected>Area of Interest *</option>
+        <option>Medical Devices</option>
+        <option>Surgical Consumables</option>
+        <option>Distribution Partnership</option>
+        <option>Private Label Manufacturing</option>
+        <option>Hospital Procurement Programme</option>
+        <option>General Enquiry</option>
+      </select>
+      <textarea class="lead__textarea" placeholder="Tell us about your requirements — volume, product categories, current suppliers, or any specific challenges you're facing..."></textarea>
+      <button class="lead__btn" onclick="handleFormSubmit(this)">Submit Enquiry — We'll Respond Within 4 Hours</button>
+      <div class="lead__disclaimer">Your information is confidential. We do not share client details with third parties. By submitting you agree to our privacy policy.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="#" class="nav__logo" style="margin-bottom:4px">
+          <div class="nav__logo-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <span class="nav__brand">Medflow <span>Innovations</span></span>
+        </a>
+        <p>Advancing healthcare access and supply chain reliability across India. Medical Devices · Surgical Consumables · Healthcare Distribution.</p>
+        <div class="footer__certifications">
+          <span class="footer__cert">ISO 13485</span>
+          <span class="footer__cert">CDSCO Registered</span>
+          <span class="footer__cert">MDR 2017</span>
+          <span class="footer__cert">GMP Compliant</span>
+        </div>
+        <div class="footer__social">
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter / X">
+            <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </a>
+          <a href="#" aria-label="Email">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Solutions</div>
+        <ul>
+          <li><a href="#">Medical Devices</a></li>
+          <li><a href="#">Surgical Consumables</a></li>
+          <li><a href="#">Distribution Network</a></li>
+          <li><a href="#">Private Label</a></li>
+          <li><a href="#">Hospital Procurement</a></li>
+          <li><a href="#">Supply Chain Analytics</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Partners</div>
+        <ul>
+          <li><a href="#">Hospital Partners</a></li>
+          <li><a href="#">Distributor Programme</a></li>
+          <li><a href="#">Manufacturer Partners</a></li>
+          <li><a href="#">Super Stockists</a></li>
+          <li><a href="#">Government Tenders</a></li>
+          <li><a href="#">Investor Relations</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Company</div>
+        <ul>
+          <li><a href="#">About Medflow</a></li>
+          <li><a href="#">Our Leadership</a></li>
+          <li><a href="#">News & Press</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Certifications</a></li>
+          <li><a href="#">Sustainability</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Contact</div>
+        <div class="footer__contact">
+          <div class="footer__contact-item">
+            <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span>Medflow Innovations Pvt. Ltd.<br>Chennai, Tamil Nadu, India</span>
+          </div>
+          <div class="footer__contact-item">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.36 12.5a19.79 19.79 0 01-3.07-8.67A2 2 0 013.27 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>+91 XXXXX XXXXX</span>
+          </div>
+          <div class="footer__contact-item">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>info@medflow.in</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copy">© 2025 Medflow Innovations Pvt. Ltd. All rights reserved. CIN: UXXXXXXXXXXXXX</div>
+      <div class="footer__bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ── SCRIPTS ─────────────────────────────────────────────────── -->
+<script>
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // Scroll animations
+  const animateEls = document.querySelectorAll('.animate-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  animateEls.forEach(el => observer.observe(el));
+
+  // Form submit feedback
+  function handleFormSubmit(btn) {
+    btn.textContent = '✓ Enquiry Received — Our team will respond shortly';
+    btn.style.background = '#1B8A5A';
+    btn.disabled = true;
+  }
+
+  // Smooth active nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav__links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'rgba(255,255,255,1)' : '';
+    });
+  }, { passive: true });
+</script>
+</body>
+</html>

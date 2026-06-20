@@ -177,16 +177,30 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .eco-diagram svg{width:100%;height:100%;overflow:visible}
 
 /* ─────────────────────────────────────────────────────────────
-   MARKET SIGNAL STRIP
+   MARKET SIGNAL STRIP — upgraded
 ───────────────────────────────────────────────────────────── */
-.signal{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:20px 0;overflow:hidden}
-.signal__track{display:flex;gap:0;white-space:nowrap;animation:ticker 35s linear infinite}
+.signal{background:var(--ink);border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:0;overflow:hidden}
+.signal__track{display:flex;gap:0;white-space:nowrap;animation:ticker 40s linear infinite}
 .signal__track:hover{animation-play-state:paused}
-.signal__item{display:inline-flex;align-items:center;gap:10px;padding:0 36px;border-right:1px solid rgba(255,255,255,.08)}
-.signal__item .val{font-family:var(--display);font-size:15px;font-weight:700;color:#fff}
-.signal__item .lbl{font-size:12px;color:rgba(255,255,255,.38);letter-spacing:.04em}
-.signal__item .arrow{font-size:12px;color:var(--teal)}
+.signal__item{display:inline-flex;align-items:center;gap:10px;padding:14px 36px;border-right:1px solid rgba(255,255,255,.06)}
+.signal__item .val{font-family:var(--display);font-size:14px;font-weight:700;color:#fff;letter-spacing:-.01em}
+.signal__item .lbl{font-size:11.5px;color:rgba(255,255,255,.33);letter-spacing:.03em}
+.signal__item .arrow{font-size:11px;color:var(--teal);font-weight:700}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ─────────────────────────────────────────────────────────────
+   SOCIAL PROOF / METRICS STRIP
+───────────────────────────────────────────────────────────── */
+.proof-strip{background:var(--paper-pure);border-bottom:1px solid var(--line);padding:0}
+.proof-strip__inner{max-width:var(--max);margin:0 auto;padding:0 24px;display:flex;align-items:stretch}
+.proof-strip__item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;border-right:1px solid var(--line);text-align:center;position:relative;transition:background .2s}
+.proof-strip__item:last-child{border-right:none}
+.proof-strip__item:hover{background:var(--blue-soft)}
+.proof-strip__num{font-family:var(--display);font-size:clamp(26px,3vw,36px);font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1}
+.proof-strip__num span{color:var(--blue)}
+.proof-strip__lbl{font-size:11.5px;color:var(--ink-50);margin-top:6px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;line-height:1.4}
+.proof-strip__icon{width:28px;height:28px;border-radius:7px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+.proof-strip__icon svg{width:14px;height:14px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
 /* ─────────────────────────────────────────────────────────────
    PROBLEM / OPPORTUNITY
@@ -400,11 +414,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .partner-card--featured .partner-card__title{color:#fff}
 .partner-card__sub{font-size:14px;line-height:1.75;color:var(--ink-50);margin-bottom:28px}
 .partner-card--featured .partner-card__sub{color:rgba(255,255,255,.42)}
-.partner-card__list{list-style:none;flex:1;display:flex;flex-direction:column;gap:9px;margin-bottom:32px}
-.partner-card__item{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;line-height:1.6;color:var(--ink-80)}
-.partner-card--featured .partner-card__item{color:rgba(255,255,255,.55)}
-.partner-card__dot{width:5px;height:5px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:8px}
-.partner-card--featured .partner-card__dot{background:var(--teal)}
+.partner-card__list{list-style:none;flex:1;display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.partner-card__item{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;line-height:1.6;color:var(--ink-80)}
+.partner-card--featured .partner-card__item{color:rgba(255,255,255,.6)}
+.partner-card__check{width:20px;height:20px;border-radius:50%;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.partner-card--featured .partner-card__check{background:rgba(0,184,169,.18)}
+.partner-card__check svg{width:10px;height:10px;stroke:var(--blue);fill:none;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+.partner-card--featured .partner-card__check svg{stroke:var(--teal)}
 
 /* ─────────────────────────────────────────────────────────────
    TRUST & COMPLIANCE
@@ -743,6 +759,146 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   .cta-form-card{padding:24px 20px;border-radius:14px}
   .cta-form__row{grid-template-columns:1fr}
 }
+/* ─────────────────────────────────────────────────────────────
+   MID-PAGE LEAD FORM
+───────────────────────────────────────────────────────────── */
+.midform{background:var(--ink);padding:64px 0;position:relative;overflow:hidden}
+.midform::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 900px 500px at 70% 50%,rgba(20,71,230,.18) 0%,transparent 70%);pointer-events:none}
+.midform::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.midform__inner{max-width:var(--max);margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:center;position:relative;z-index:1}
+.midform__tag{display:inline-flex;align-items:center;gap:8px;padding:5px 14px 5px 8px;border:1px solid rgba(0,184,169,.3);border-radius:100px;background:rgba(0,184,169,.1);margin-bottom:16px;font-size:11.5px;font-weight:700;color:var(--teal);letter-spacing:.06em;text-transform:uppercase}
+.midform__tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(0,184,169,.2);flex-shrink:0}
+.midform__title{font-family:var(--display);font-size:clamp(26px,3.5vw,40px);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:14px}
+.midform__sub{font-size:15px;line-height:1.75;color:rgba(255,255,255,.45);margin-bottom:28px}
+.midform__channels{display:flex;flex-direction:column;gap:10px}
+.midform__channel{display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:9px;font-size:13.5px;font-weight:600;text-decoration:none;transition:all .18s;border:1.5px solid transparent}
+.midform__channel svg{width:18px;height:18px;flex-shrink:0}
+.midform__channel--wa{background:#25D366;color:#fff;box-shadow:0 4px 16px rgba(37,211,102,.28)}
+.midform__channel--wa:hover{background:#22C35E;transform:translateX(4px)}
+.midform__channel--call{background:rgba(255,255,255,.06);color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.12)}
+.midform__channel--call:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.25);transform:translateX(4px)}
+.midform__channel--email{background:rgba(255,255,255,.06);color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.12)}
+.midform__channel--email:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.25);transform:translateX(4px)}
+
+/* Form card */
+.midform__right{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:36px;backdrop-filter:blur(12px)}
+.midform__form{display:flex;flex-direction:column;gap:12px}
+.midform__row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.midform__field{display:flex;flex-direction:column}
+.midform__field--full{grid-column:1/-1}
+.midform__input{width:100%;padding:12px 15px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.1);border-radius:8px;font-family:var(--sans);font-size:14px;color:#fff;outline:none;transition:border-color .18s,background .18s;-webkit-appearance:none;appearance:none}
+.midform__input::placeholder{color:rgba(255,255,255,.28)}
+.midform__input:focus{border-color:rgba(20,71,230,.7);background:rgba(255,255,255,.09)}
+.midform__input.error{border-color:rgba(239,68,68,.6)}
+.midform__select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.3)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px;cursor:pointer}
+.midform__select option{background:#0D1F3C;color:#fff}
+.midform__textarea{resize:none;line-height:1.6}
+.midform__submit{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px 24px;background:var(--blue);color:#fff;border:none;border-radius:9px;font-family:var(--display);font-size:15px;font-weight:800;cursor:pointer;transition:all .2s;letter-spacing:-.01em;box-shadow:var(--shadow-blue)}
+.midform__submit svg{width:16px;height:16px;transition:transform .2s}
+.midform__submit:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 12px 32px rgba(20,71,230,.35)}
+.midform__submit:hover svg{transform:translateX(3px)}
+.midform__submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.midform__disclaimer{font-size:11.5px;color:rgba(255,255,255,.22);text-align:center;margin-top:4px}
+
+/* Mid form success */
+.midform__success{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px 20px;min-height:200px;gap:12px}
+.midform__success-icon{width:56px;height:56px;border-radius:50%;background:rgba(0,184,169,.15);border:1.5px solid rgba(0,184,169,.3);display:flex;align-items:center;justify-content:center}
+.midform__success-icon svg{width:26px;height:26px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.midform__success-title{font-family:var(--display);font-size:22px;font-weight:800;color:#fff}
+.midform__success-body{font-size:14px;color:rgba(255,255,255,.45);line-height:1.6;max-width:300px}
+.midform__success-reset{background:none;border:1.5px solid rgba(255,255,255,.15);color:rgba(255,255,255,.4);padding:9px 18px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;margin-top:4px}
+.midform__success-reset:hover{border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)}
+
+/* Mobile */
+@media(max-width:768px){
+  .midform__inner{grid-template-columns:1fr;gap:36px}
+  .midform__right{padding:24px 20px}
+  .midform__row{grid-template-columns:1fr}
+  .midform{padding:48px 0}
+  .midform__inner{padding:0 18px}
+}
+@media(max-width:400px){
+  .midform__title{font-size:24px}
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FLOATING WHATSAPP BUTTON
+───────────────────────────────────────────────────────────── */
+.wa-float{
+  position:fixed;bottom:28px;right:24px;z-index:300;
+  display:flex;align-items:center;gap:10px;
+  background:#25D366;color:#fff;
+  padding:13px 20px 13px 16px;
+  border-radius:100px;
+  text-decoration:none;font-family:var(--sans);font-size:14px;font-weight:700;
+  box-shadow:0 8px 32px rgba(37,211,102,.35),0 2px 8px rgba(0,0,0,.15);
+  transition:all .22s ease;
+  animation:wa-bounce 3s ease-in-out infinite;
+}
+.wa-float:hover{background:#22C35E;transform:translateY(-3px) scale(1.03);box-shadow:0 14px 40px rgba(37,211,102,.45)}
+.wa-float svg{width:22px;height:22px;flex-shrink:0}
+.wa-float__label{white-space:nowrap}
+@keyframes wa-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@media(max-width:768px){
+  .wa-float{bottom:84px;right:16px;padding:12px 16px;border-radius:50%;width:52px;height:52px;justify-content:center}
+  .wa-float__label{display:none}
+  .wa-float svg{width:26px;height:26px}
+  .wa-float{animation:none}
+}
+
+/* ─────────────────────────────────────────────────────────────
+   CONTACT SECTION — SOCIAL BUTTONS & ICONS
+───────────────────────────────────────────────────────────── */
+.contact-info-item--link{text-decoration:none;transition:opacity .15s}
+.contact-info-item--link:hover{opacity:.75}
+.contact-social{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+.contact-social__item{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 18px;border-radius:10px;
+  font-family:var(--sans);font-size:13.5px;font-weight:700;
+  text-decoration:none;transition:all .18s;
+  border:1.5px solid transparent;
+}
+.contact-social__item svg{width:20px;height:20px;flex-shrink:0}
+.contact-social__item--wa{background:#25D366;color:#fff;box-shadow:0 4px 16px rgba(37,211,102,.3)}
+.contact-social__item--wa:hover{background:#22C35E;transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.4)}
+.contact-social__item--call{background:rgba(255,255,255,.07);color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.15)}
+.contact-social__item--call:hover{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)}
+.contact-social__item--email{background:rgba(255,255,255,.07);color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.15)}
+.contact-social__item--email:hover{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)}
+
+.contact-socials-row{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08)}
+.contact-socials-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:12px}
+.contact-socials-icons{display:flex;gap:8px;flex-wrap:wrap}
+.csocial{
+  width:38px;height:38px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;
+  border:1.5px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.05);
+  color:rgba(255,255,255,.5);
+  transition:all .18s;text-decoration:none;
+  flex-shrink:0;
+}
+.csocial svg{width:17px;height:17px}
+.csocial:hover{transform:translateY(-2px);border-color:transparent}
+.csocial--li:hover{background:#0A66C2;color:#fff}
+.csocial--ig:hover{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff}
+.csocial--fb:hover{background:#1877F2;color:#fff}
+.csocial--tw:hover{background:#000;color:#fff}
+.csocial--yt:hover{background:#FF0000;color:#fff}
+.csocial--wa:hover{background:#25D366;color:#fff}
+
+/* Footer WhatsApp CTA */
+.footer__wa-btn{
+  display:flex;align-items:center;gap:8px;
+  margin-top:16px;padding:10px 16px;
+  background:#25D366;color:#fff;
+  border-radius:8px;font-size:13px;font-weight:700;
+  text-decoration:none;width:fit-content;
+  transition:all .18s;
+}
+.footer__wa-btn svg{width:16px;height:16px;flex-shrink:0}
+.footer__wa-btn:hover{background:#22C35E;transform:translateY(-1px)}
 </style>
 </head>
 <body>
@@ -796,8 +952,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 <!-- Sticky mobile bar -->
 <div class="mobile-bar" id="mobileBar">
-  <a href="#contact" class="mobile-bar__secondary">Request Catalogue</a>
-  <a href="#partner" class="mobile-bar__primary">Partner With Us</a>
+  <a href="https://wa.me/918072695371?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Medflow%20Innovations" class="mobile-bar__secondary" target="_blank" rel="noopener">💬 WhatsApp</a>
+  <a href="#contact" class="mobile-bar__primary">Request Catalogue</a>
 </div>
 
 
@@ -962,6 +1118,92 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <div class="signal__item"><span class="val">₹99,858 Cr</span><span class="lbl">Union Budget 2025–26 Healthcare Allocation</span><span class="arrow">↑</span></div>
   </div>
 </div>
+
+
+
+
+<!-- ════════════════════════════════════════════════════════════
+     MID-PAGE LEAD FORM
+═══════════════════════════════════════════════════════════════ -->
+<section class="midform" id="quick-enquiry">
+  <div class="midform__inner">
+
+    <!-- Left: hook copy -->
+    <div class="midform__left" data-reveal>
+      <div class="midform__tag">Quick Enquiry</div>
+      <h2 class="midform__title">Get a response<br>in under 24 hours</h2>
+      <p class="midform__sub">Hospitals, manufacturers, distributors, and procurement teams — tell us what you need and we'll get back to you by the next business day.</p>
+      <div class="midform__channels">
+        <a href="https://wa.me/918072695371?text=Hi%2C%20I%27d%20like%20to%20connect%20with%20Medflow" class="midform__channel midform__channel--wa" target="_blank" rel="noopener">
+          <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.442.638 4.735 1.752 6.726L2 30l7.463-1.727A13.944 13.944 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm6.29 19.89c-.344-.172-2.037-1.004-2.352-1.12-.316-.115-.546-.172-.775.172-.23.344-.887 1.12-1.088 1.35-.2.23-.4.258-.745.086-.344-.172-1.453-.536-2.768-1.708-1.023-.912-1.714-2.037-1.914-2.381-.2-.344-.021-.53.15-.701.155-.155.344-.4.516-.601.172-.201.23-.344.344-.573.115-.23.058-.43-.029-.601-.086-.172-.775-1.868-1.062-2.557-.28-.672-.564-.58-.775-.59-.2-.01-.43-.013-.659-.013s-.601.086-.916.43c-.315.344-1.2 1.174-1.2 2.863 0 1.69 1.228 3.322 1.4 3.551.172.23 2.416 3.69 5.853 5.173.818.353 1.457.564 1.955.721.821.262 1.569.225 2.159.137.659-.098 2.037-.832 2.323-1.636.287-.803.287-1.491.201-1.636-.086-.144-.315-.23-.659-.4z"/></svg>
+          WhatsApp Us Now
+        </a>
+        <a href="tel:+918072695371" class="midform__channel midform__channel--call">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.36 12.5a19.79 19.79 0 01-3.07-8.67A2 2 0 013.27 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +91 80726 95371
+        </a>
+        <a href="mailto:Medflowinnovations@gmail.com" class="midform__channel midform__channel--email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Medflowinnovations@gmail.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: compact form -->
+    <div class="midform__right" data-reveal data-delay="2">
+      <form class="midform__form" id="midForm" novalidate>
+        <input type="hidden" name="_subject" value="Quick Enquiry — Medflow Innovations Website">
+
+        <div class="midform__row">
+          <div class="midform__field">
+            <input type="text" class="midform__input" id="mf_name" placeholder="Full Name *" required>
+          </div>
+          <div class="midform__field">
+            <input type="text" class="midform__input" id="mf_org" placeholder="Organisation *" required>
+          </div>
+        </div>
+        <div class="midform__row">
+          <div class="midform__field">
+            <input type="tel" class="midform__input" id="mf_phone" placeholder="Phone / WhatsApp *" required>
+          </div>
+          <div class="midform__field">
+            <input type="email" class="midform__input" id="mf_email" placeholder="Email Address *" required>
+          </div>
+        </div>
+        <div class="midform__field midform__field--full">
+          <select class="midform__input midform__select" id="mf_interest" required>
+            <option value="" disabled selected>I am interested in… *</option>
+            <option>Product Catalogue &amp; Pricing</option>
+            <option>Distribution Partnership</option>
+            <option>Super Stockist Opportunity</option>
+            <option>Hospital / Institutional Procurement</option>
+            <option>Manufacturer Partnership</option>
+            <option>Private Label Manufacturing</option>
+            <option>General Business Discussion</option>
+          </select>
+        </div>
+        <div class="midform__field midform__field--full">
+          <textarea class="midform__input midform__textarea" id="mf_msg" placeholder="Briefly describe your requirement (optional)" rows="2"></textarea>
+        </div>
+        <button type="submit" class="midform__submit" id="midSubmitBtn">
+          <span id="midSubmitLabel">Send Enquiry</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="midform__disclaimer">We respond within 24 hours. Your data stays private.</p>
+      </form>
+      <!-- Mid form success -->
+      <div class="midform__success" id="midSuccess" style="display:none">
+        <div class="midform__success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="midform__success-title">Enquiry Sent!</div>
+        <div class="midform__success-body">Our team will contact you within 24 hours at the number and email you provided.</div>
+        <button class="midform__success-reset" onclick="resetMidForm()">Send Another</button>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
 <!-- ════════════════════════════════════════════════════════════
@@ -1432,12 +1674,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <div class="partner-card__title">Distribution Partnership</div>
         <div class="partner-card__sub">Authorised distribution, market access, and institutional connectivity for domestic and international medical device manufacturers entering or scaling in India.</div>
         <ul class="partner-card__list">
-          <li><div class="partner-card__dot"></div>Exclusive and preferred territory allocation by state or region</li>
-          <li><div class="partner-card__dot"></div>Full CDSCO and MDR compliance management</li>
-          <li><div class="partner-card__dot"></div>Access to Medflow's institutional buyer network</li>
-          <li><div class="partner-card__dot"></div>Co-marketing and clinical support programmes</li>
-          <li><div class="partner-card__dot"></div>Tender participation and government channel access</li>
-          <li><div class="partner-card__dot"></div>Transparent revenue and commercial structure</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Exclusive and preferred territory allocation by state or region</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Full CDSCO and MDR compliance management</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Access to Medflow's institutional buyer network</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Co-marketing and clinical support programmes</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Tender participation and government channel access</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Transparent revenue and commercial structure</li>
         </ul>
         <button data-intent-link="distribution" class="btn btn-ghost-light" style="background:transparent;color:var(--blue);border-color:rgba(20,71,230,.3);width:100%;justify-content:center">Start Manufacturer Discussion <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </div>
@@ -1448,12 +1690,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <div class="partner-card__title">Super Stockist Programme</div>
         <div class="partner-card__sub">High-margin product portfolios, territorial exclusivity, and full commercial and marketing support for regional healthcare distributors ready to grow with a national platform.</div>
         <ul class="partner-card__list">
-          <li><div class="partner-card__dot"></div>Defined territory with competitive exclusivity</li>
-          <li><div class="partner-card__dot"></div>Premium margins on a curated 500+ SKU portfolio</li>
-          <li><div class="partner-card__dot"></div>Marketing, training, and field support</li>
-          <li><div class="partner-card__dot"></div>Credit facilities for qualifying partners</li>
-          <li><div class="partner-card__dot"></div>Digital ordering and real-time inventory access</li>
-          <li><div class="partner-card__dot"></div>Annual performance incentives and bonuses</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Defined territory with competitive exclusivity</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Premium margins on a curated 500+ SKU portfolio</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Marketing, training, and field support</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Credit facilities for qualifying partners</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Digital ordering and real-time inventory access</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Annual performance incentives and bonuses</li>
         </ul>
         <button data-intent-link="stockist" class="btn btn-white" style="width:100%;justify-content:center">Apply for Super Stockist <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </div>
@@ -1464,12 +1706,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <div class="partner-card__title">Institutional Supply Agreement</div>
         <div class="partner-card__sub">Annual supply partnerships with hospitals, hospital groups, and healthcare institutions — combining vendor consolidation, price protection, and managed procurement into one agreement.</div>
         <ul class="partner-card__list">
-          <li><div class="partner-card__dot"></div>Single-source supply across all major categories</li>
-          <li><div class="partner-card__dot"></div>Annual rate contracts with price lock guarantee</li>
-          <li><div class="partner-card__dot"></div>Dedicated procurement manager and 24/7 helpline</li>
-          <li><div class="partner-card__dot"></div>Full CDSCO compliance documentation</li>
-          <li><div class="partner-card__dot"></div>Emergency replenishment within 4 hours for critical items</li>
-          <li><div class="partner-card__dot"></div>Quarterly business reviews and cost optimisation</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Single-source supply across all major categories</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Annual rate contracts with price lock guarantee</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Dedicated procurement manager and 24/7 helpline</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Full CDSCO compliance documentation</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Emergency replenishment within 4 hours for critical items</li>
+          <li class="partner-card__item"><div class="partner-card__check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>Quarterly business reviews and cost optimisation</li>
         </ul>
         <button data-intent-link="hospital" class="btn btn-ghost-light" style="background:transparent;color:var(--blue);border-color:rgba(20,71,230,.3);width:100%;justify-content:center">Discuss Hospital Partnership <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </div>
@@ -1546,7 +1788,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <p class="founder__body">Every manufacturer partnership, every hospital agreement, every distribution route we establish is a permanent component of that infrastructure. We are inviting the right partners — manufacturers, institutions, and distribution leaders — to build it with us.</p>
       <div class="founder__cta-row">
         <a href="#contact" class="btn btn-primary">Request a Strategic Discussion <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I'd%20like%20to%20discuss%20a%20partnership%20with%20Medflow%20Innovations" class="btn btn-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>WhatsApp Us</a>
+        <a href="https://wa.me/918072695371?text=Hi%2C%20I'd%20like%20to%20discuss%20a%20partnership%20with%20Medflow%20Innovations" class="btn btn-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>WhatsApp Us</a>
       </div>
     </div>
   </div>
@@ -1592,13 +1834,61 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       </div>
 
       <div class="finalcta__contact-info">
-        <div class="contact-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>info@medflowinnovations.com</span></div>
-        <div class="contact-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span>Chennai, Tamil Nadu, India</span></div>
-        <div class="contact-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span>medflowinnovations.com</span></div>
+        <a href="tel:+918072695371" class="contact-info-item contact-info-item--link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.36 12.5a19.79 19.79 0 01-3.07-8.67A2 2 0 013.27 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>+91 80726 95371</span>
+        </a>
+        <a href="mailto:Medflowinnovations@gmail.com" class="contact-info-item contact-info-item--link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>Medflowinnovations@gmail.com</span>
+        </a>
+        <div class="contact-info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Chennai, Tamil Nadu, India</span>
+        </div>
+        <a href="https://medflowinnovations.com" class="contact-info-item contact-info-item--link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          <span>medflowinnovations.com</span>
+        </a>
       </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
-        <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I'd%20like%20to%20connect%20with%20Medflow%20Innovations" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>WhatsApp</a>
-        <a href="mailto:info@medflowinnovations.com" class="btn btn-ghost-light btn-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email Directly</a>
+      <!-- Social links in contact section -->
+      <div class="contact-social">
+        <a href="https://wa.me/918072695371?text=Hi%2C%20I%27d%20like%20to%20connect%20with%20Medflow%20Innovations" class="contact-social__item contact-social__item--wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.442.638 4.735 1.752 6.726L2 30l7.463-1.727A13.944 13.944 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5a11.44 11.44 0 01-5.845-1.603l-.418-.249-4.43 1.025 1.057-4.317-.272-.44A11.455 11.455 0 014.5 16C4.5 9.596 9.596 4.5 16 4.5S27.5 9.596 27.5 16 22.404 27.5 16 27.5zm6.29-8.61c-.344-.172-2.037-1.004-2.352-1.12-.316-.115-.546-.172-.775.172-.23.344-.887 1.12-1.088 1.35-.2.23-.4.258-.745.086-.344-.172-1.453-.536-2.768-1.708-1.023-.912-1.714-2.037-1.914-2.381-.2-.344-.021-.53.15-.701.155-.155.344-.4.516-.601.172-.201.23-.344.344-.573.115-.23.058-.43-.029-.601-.086-.172-.775-1.868-1.062-2.557-.28-.672-.564-.58-.775-.59-.2-.01-.43-.013-.659-.013s-.601.086-.916.43c-.315.344-1.2 1.174-1.2 2.863 0 1.69 1.228 3.322 1.4 3.551.172.23 2.416 3.69 5.853 5.173.818.353 1.457.564 1.955.721.821.262 1.569.225 2.159.137.659-.098 2.037-.832 2.323-1.636.287-.803.287-1.491.201-1.636-.086-.144-.315-.23-.659-.4z"/></svg>
+          WhatsApp
+        </a>
+        <a href="tel:+918072695371" class="contact-social__item contact-social__item--call" aria-label="Call us">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.36 12.5a19.79 19.79 0 01-3.07-8.67A2 2 0 013.27 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <a href="mailto:Medflowinnovations@gmail.com" class="contact-social__item contact-social__item--email" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Email Us
+        </a>
+      </div>
+      <!-- Social media icons -->
+      <div class="contact-socials-row">
+        <span class="contact-socials-label">Follow Medflow</span>
+        <div class="contact-socials-icons">
+          <a href="https://www.linkedin.com/company/medflowinnovations" target="_blank" rel="noopener" aria-label="LinkedIn" class="csocial csocial--li">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://www.instagram.com/medflowinnovations" target="_blank" rel="noopener" aria-label="Instagram" class="csocial csocial--ig">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.facebook.com/medflowinnovations" target="_blank" rel="noopener" aria-label="Facebook" class="csocial csocial--fb">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://twitter.com/medflowinno" target="_blank" rel="noopener" aria-label="X / Twitter" class="csocial csocial--tw">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://youtube.com/@medflowinnovations" target="_blank" rel="noopener" aria-label="YouTube" class="csocial csocial--yt">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          </a>
+          <a href="https://wa.me/918072695371" target="_blank" rel="noopener" aria-label="WhatsApp" class="csocial csocial--wa">
+            <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.442.638 4.735 1.752 6.726L2 30l7.463-1.727A13.944 13.944 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5a11.44 11.44 0 01-5.845-1.603l-.418-.249-4.43 1.025 1.057-4.317-.272-.44A11.455 11.455 0 014.5 16C4.5 9.596 9.596 4.5 16 4.5S27.5 9.596 27.5 16 22.404 27.5 16 27.5zm6.29-8.61c-.344-.172-2.037-1.004-2.352-1.12-.316-.115-.546-.172-.775.172-.23.344-.887 1.12-1.088 1.35-.2.23-.4.258-.745.086-.344-.172-1.453-.536-2.768-1.708-1.023-.912-1.714-2.037-1.914-2.381-.2-.344-.021-.53.15-.701.155-.155.344-.4.516-.601.172-.201.23-.344.344-.573.115-.23.058-.43-.029-.601-.086-.172-.775-1.868-1.062-2.557-.28-.672-.564-.58-.775-.59-.2-.01-.43-.013-.659-.013s-.601.086-.916.43c-.315.344-1.2 1.174-1.2 2.863 0 1.69 1.228 3.322 1.4 3.551.172.23 2.416 3.69 5.853 5.173.818.353 1.457.564 1.955.721.821.262 1.569.225 2.159.137.659-.098 2.037-.832 2.323-1.636.287-.803.287-1.491.201-1.636-.086-.144-.315-.23-.659-.4z"/></svg>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -1710,6 +2000,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 </section>
 
 
+<!-- ════ FLOATING WHATSAPP ════ -->
+<a href="https://wa.me/918072695371?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Medflow%20Innovations" 
+   class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.442.638 4.735 1.752 6.726L2 30l7.463-1.727A13.944 13.944 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5a11.44 11.44 0 01-5.845-1.603l-.418-.249-4.43 1.025 1.057-4.317-.272-.44A11.455 11.455 0 014.5 16C4.5 9.596 9.596 4.5 16 4.5S27.5 9.596 27.5 16 22.404 27.5 16 27.5zm6.29-8.61c-.344-.172-2.037-1.004-2.352-1.12-.316-.115-.546-.172-.775.172-.23.344-.887 1.12-1.088 1.35-.2.23-.4.258-.745.086-.344-.172-1.453-.536-2.768-1.708-1.023-.912-1.714-2.037-1.914-2.381-.2-.344-.021-.53.15-.701.155-.155.344-.4.516-.601.172-.201.23-.344.344-.573.115-.23.058-.43-.029-.601-.086-.172-.775-1.868-1.062-2.557-.28-.672-.564-.58-.775-.59-.2-.01-.43-.013-.659-.013s-.601.086-.916.43c-.315.344-1.2 1.174-1.2 2.863 0 1.69 1.228 3.322 1.4 3.551.172.23 2.416 3.69 5.853 5.173.818.353 1.457.564 1.955.721.821.262 1.569.225 2.159.137.659-.098 2.037-.832 2.323-1.636.287-.803.287-1.491.201-1.636-.086-.144-.315-.23-.659-.4z"/></svg>
+  <span class="wa-float__label">Chat with us</span>
+</a>
+
 <!-- ════════════════════════════════════════════════════════════
      FOOTER
 ═══════════════════════════════════════════════════════════════ -->
@@ -1730,9 +2027,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
           <span class="footer__badge">MDR 2017</span>
         </div>
         <div class="footer__social">
-          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
-          <a href="#" aria-label="X / Twitter"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
-          <a href="mailto:info@medflowinnovations.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="https://www.linkedin.com/company/medflowinnovations" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://www.instagram.com/medflowinnovations" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.facebook.com/medflowinnovations" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="https://twitter.com/medflowinno" target="_blank" rel="noopener" aria-label="X / Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://youtube.com/@medflowinnovations" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
+          <a href="https://wa.me/918072695371" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.442.638 4.735 1.752 6.726L2 30l7.463-1.727A13.944 13.944 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5a11.44 11.44 0 01-5.845-1.603l-.418-.249-4.43 1.025 1.057-4.317-.272-.44A11.455 11.455 0 014.5 16C4.5 9.596 9.596 4.5 16 4.5S27.5 9.596 27.5 16 22.404 27.5 16 27.5zm6.29-8.61c-.344-.172-2.037-1.004-2.352-1.12-.316-.115-.546-.172-.775.172-.23.344-.887 1.12-1.088 1.35-.2.23-.4.258-.745.086-.344-.172-1.453-.536-2.768-1.708-1.023-.912-1.714-2.037-1.914-2.381-.2-.344-.021-.53.15-.701.155-.155.344-.4.516-.601.172-.201.23-.344.344-.573.115-.23.058-.43-.029-.601-.086-.172-.775-1.868-1.062-2.557-.28-.672-.564-.58-.775-.59-.2-.01-.43-.013-.659-.013s-.601.086-.916.43c-.315.344-1.2 1.174-1.2 2.863 0 1.69 1.228 3.322 1.4 3.551.172.23 2.416 3.69 5.853 5.173.818.353 1.457.564 1.955.721.821.262 1.569.225 2.159.137.659-.098 2.037-.832 2.323-1.636.287-.803.287-1.491.201-1.636-.086-.144-.315-.23-.659-.4z"/></svg></a>
+          <a href="mailto:Medflowinnovations@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
         </div>
       </div>
       <div class="footer__col">
@@ -1770,21 +2071,29 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <div class="footer__col">
         <div class="footer__col-title">Contact</div>
         <div class="footer__contact-item">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span>info@medflowinnovations.com</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.36 12.5a19.79 19.79 0 01-3.07-8.67A2 2 0 013.27 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:+918072695371" style="color:inherit">+91 80726 95371</a>
         </div>
         <div class="footer__contact-item">
-          <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:Medflowinnovations@gmail.com" style="color:inherit">Medflowinnovations@gmail.com</a>
+        </div>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           <span>Chennai, Tamil Nadu, India</span>
         </div>
         <div class="footer__contact-item">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-          <span>medflowinnovations.com</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          <a href="https://medflowinnovations.com" target="_blank" rel="noopener" style="color:inherit">medflowinnovations.com</a>
         </div>
+        <a href="https://wa.me/918072695371?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Medflow%20Innovations" target="_blank" rel="noopener" class="footer__wa-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
       </div>
     </div>
     <div class="footer__bottom">
-      <div class="footer__copy">© 2025 Medflow Innovations Pvt. Ltd. All rights reserved.</div>
+      <div class="footer__copy">© 2026 Medflow Innovations Pvt. Ltd. All rights reserved.</div>
       <div class="footer__legal">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
@@ -1875,7 +2184,7 @@ document.querySelectorAll('.intent-tab').forEach(tab => {
   });
 });
 
-// ── Form validation & submit ──
+// ── Form validation & submit → Formspree ──
 const ctaForm = document.getElementById('ctaForm');
 const formSuccess = document.getElementById('formSuccess');
 const formSubmitBtn = document.getElementById('formSubmitBtn');
@@ -1907,17 +2216,63 @@ ctaForm.addEventListener('submit', async (e) => {
     return;
   }
 
-  // Simulate submission (replace with actual endpoint / Formspree / EmailJS)
+  // Lock UI
   formSubmitBtn.disabled = true;
   submitLabel.textContent = 'Sending…';
 
-  await new Promise(r => setTimeout(r, 1200)); // simulate network delay
+  // Build payload — all fields sent to Formspree
+  const payload = {
+    _subject:       'New Enquiry — Medflow Innovations: ' + document.getElementById('enquiryType').value,
+    enquiry_type:   document.getElementById('enquiryType').value,
+    full_name:      document.getElementById('f_name').value.trim(),
+    organisation:   document.getElementById('f_org').value.trim(),
+    email:          document.getElementById('f_email').value.trim(),
+    phone:          document.getElementById('f_phone').value.trim(),
+    city_state:     document.getElementById('f_city').value.trim() || '—',
+    role:           document.getElementById('f_role').value,
+    extra_detail:   document.getElementById('f_extra') && document.getElementById('f_extra').value
+                      ? document.getElementById('f_extra').value : '—',
+    message:        document.getElementById('f_message').value.trim() || '—',
+    submitted_at:   new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+    source_page:    window.location.href,
+  };
 
-  const ref = 'MFI-' + Date.now().toString(36).toUpperCase();
-  document.getElementById('successRef').textContent = 'Reference: ' + ref;
-  ctaForm.style.display = 'none';
-  document.querySelector('.cta-form-header').style.display = 'none';
-  formSuccess.style.display = 'block';
+  try {
+    const res = await fetch('https://formspree.io/f/xjgdnlwz', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body:    JSON.stringify(payload),
+    });
+
+    if (res.ok) {
+      // Success
+      const ref = 'MFI-' + Date.now().toString(36).toUpperCase();
+      document.getElementById('successRef').textContent = 'Reference: ' + ref;
+      ctaForm.style.display = 'none';
+      document.querySelector('.cta-form-header').style.display = 'none';
+      formSuccess.style.display = 'block';
+    } else {
+      // Formspree returned an error
+      const data = await res.json().catch(() => ({}));
+      const msg = (data.errors && data.errors[0] && data.errors[0].message) || 'Submission failed. Please try again or email us directly.';
+      submitLabel.textContent = msg;
+      formSubmitBtn.style.background = '#DC2626';
+      setTimeout(() => {
+        submitLabel.textContent = 'Send Enquiry';
+        formSubmitBtn.style.background = '';
+        formSubmitBtn.disabled = false;
+      }, 4000);
+    }
+  } catch (err) {
+    // Network error
+    submitLabel.textContent = 'Network error — please try again or email us directly.';
+    formSubmitBtn.style.background = '#DC2626';
+    setTimeout(() => {
+      submitLabel.textContent = 'Send Enquiry';
+      formSubmitBtn.style.background = '';
+      formSubmitBtn.disabled = false;
+    }, 4000);
+  }
 });
 
 function resetForm() {
@@ -1930,7 +2285,93 @@ function resetForm() {
   ctaForm.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
 }
 
-// ── Partner card buttons → scroll to form with pre-selected intent ──
+// ── Mid-page form (Formspree) ──
+const midForm = document.getElementById('midForm');
+const midSuccess = document.getElementById('midSuccess');
+const midSubmitBtn = document.getElementById('midSubmitBtn');
+const midSubmitLabel = document.getElementById('midSubmitLabel');
+
+if (midForm) {
+  midForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    let valid = true;
+
+    const mfFields = [
+      { el: document.getElementById('mf_name'),  check: v => v.trim().length >= 2 },
+      { el: document.getElementById('mf_org'),   check: v => v.trim().length >= 2 },
+      { el: document.getElementById('mf_phone'), check: v => v.replace(/\D/g,'').length >= 7 },
+      { el: document.getElementById('mf_email'), check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+      { el: document.getElementById('mf_interest'), check: v => v !== '' },
+    ];
+
+    mfFields.forEach(f => {
+      f.el.classList.remove('error');
+      if (!f.check(f.el.value)) { f.el.classList.add('error'); valid = false; }
+    });
+
+    if (!valid) {
+      const firstErr = midForm.querySelector('.error');
+      if (firstErr) firstErr.focus();
+      return;
+    }
+
+    midSubmitBtn.disabled = true;
+    midSubmitLabel.textContent = 'Sending…';
+
+    const payload = {
+      _subject:     'Quick Enquiry — Medflow Innovations: ' + document.getElementById('mf_interest').value,
+      enquiry_type: document.getElementById('mf_interest').value,
+      full_name:    document.getElementById('mf_name').value.trim(),
+      organisation: document.getElementById('mf_org').value.trim(),
+      phone:        document.getElementById('mf_phone').value.trim(),
+      email:        document.getElementById('mf_email').value.trim(),
+      message:      document.getElementById('mf_msg').value.trim() || '—',
+      form_source:  'Mid-page quick enquiry form',
+      submitted_at: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+      page_url:     window.location.href,
+    };
+
+    try {
+      const res = await fetch('https://formspree.io/f/xjgdnlwz', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        midForm.style.display = 'none';
+        midSuccess.style.display = 'flex';
+      } else {
+        midSubmitLabel.textContent = 'Error — please try again';
+        midSubmitBtn.style.background = '#DC2626';
+        setTimeout(() => {
+          midSubmitLabel.textContent = 'Send Enquiry';
+          midSubmitBtn.style.background = '';
+          midSubmitBtn.disabled = false;
+        }, 3500);
+      }
+    } catch {
+      midSubmitLabel.textContent = 'Network error — try again';
+      midSubmitBtn.style.background = '#DC2626';
+      setTimeout(() => {
+        midSubmitLabel.textContent = 'Send Enquiry';
+        midSubmitBtn.style.background = '';
+        midSubmitBtn.disabled = false;
+      }, 3500);
+    }
+  });
+}
+
+function resetMidForm() {
+  if (midForm) {
+    midForm.reset();
+    midForm.style.display = 'flex';
+    midSuccess.style.display = 'none';
+    midSubmitBtn.disabled = false;
+    midSubmitLabel.textContent = 'Send Enquiry';
+    midForm.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+  }
+}
 document.querySelectorAll('[data-intent-link]').forEach(btn => {
   btn.addEventListener('click', e => {
     const intent = btn.dataset.intentLink;
